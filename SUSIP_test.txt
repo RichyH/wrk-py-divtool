@@ -1,0 +1,86 @@
+============================================================================================================================================
+============================================================================================================================================
+
+V 4.1 :
+
+
+STATUS INFO	RMATI	ON AT 13:12 04FEB13			
+DIR	TYPE	TRAFFIC STATE/PTR	LINE STATE	DIV STATE	ADD INFO
+5000	IPX	IDLE          #000A	ASSIGNED	FME		FME=5001
+			
+					
+STATUS INFO	RMATI	ON AT 13:12 04FEB13			
+DIR	TYPE	TRAFFIC STATE/PTR	LINE STATE	DIV STATE	ADD INFO
+5001	IPX	IDLE          #0002	ASSIGNED	PEN		LIST=2
+END	
+
+
+STATUS INFO	RMATI	ON AT 13:13 04FEB13			
+DIR	TYPE	TRAFFIC STATE/PTR	LINE STATE	DIV STATE	ADD INFO
+5651	DTS	IDLE          #025C	FREE		ECF	
+		ODN1:IDLE			
+		ODN2:IDLE			
+		ODN3:IDLE			
+									ECF = 905651
+
+STATUS INFO	RMATI	ON AT 13:13 04FEB13			
+DIR	TYPE	TRAFFIC STATE/PTR	LINE STATE	DIV STATE	ADD INFO
+5910	IPX	IDLE          #0029	ASSIGNED	ECF,PEN		LIST=1
+									ECF = 905910
+					
+
+STATUS INFO	RMATI	ON AT 13:13 04FEB13			
+DIR	TYPE	TRAFFIC STATE/PTR	LINE STATE	DIV STATE	ADD INFO
+7178	DTS	IDLE          #022C	FREE		ICS	
+		ODN1:IDLE			
+		ODN2:IDLE			
+		ODN3:IDLE			
+									ICS-CODE = 1 RETURN NOT SET (Busy)
+
+
+STATUS INFO	RMATI	ON AT 13:13 04FEB13			
+DIR	TYPE	TRAFFIC STATE/PTR	LINE STATE	DIV STATE	ADD INFO
+5977	DTS	IDLE          #020A	FREE		DIR	
+		ODN1:IDLE			
+		ODN2:IDLE			
+		ODN3:IDLE			
+END
+
+============================================================================================================================================
+============================================================================================================================================
+
+V 5.0 :
+
+
+STATUS INFORMATION AT 14:54 04FEB13
+======================================================================
+
+DIRECTORY NUMBER: 5100
+DIV STATE: DIR, BSY, NAN, FME, PEN, ICS
+ADD INFO: FME=5102, LIST=1, ICS-CODE = 1 RETURN NOT SET (Busy)
+
+TYPE TRAFFIC STATE PTR    LINE STATE      TERM INFO  TERMINAL ID
+DTS  IDLE          #027F  FREE
+     ODN1:IDLE
+     ODN2:IDLE
+     ODN3:IDLE
+END
+
+
+STATUS INFORMATION AT 14:55 04FEB13
+======================================================================
+
+DIRECTORY NUMBER: 5101
+DIV STATE: DIR, BSY, NAN, ECF, PEN, ICS
+ADD INFO: LIST=1, ECF = 001503, ICS-CODE = 1 RETURN NOT SET (Busy)
+
+TYPE TRAFFIC STATE PTR    LINE STATE      TERM INFO  TERMINAL ID
+DTS  IDLE          #027F  FREE
+     ODN1:IDLE
+     ODN2:IDLE
+     ODN3:IDLE
+END
+
+
+============================================================================================================================================
+============================================================================================================================================
