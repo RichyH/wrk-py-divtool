@@ -4,16 +4,38 @@ Created on 21.02.2013
 
 @author: Richy Hareter
 '''
+import re
+
+def leseDatei(datei): 
+    d = {} 
+    f = open(datei,"r") 
+    for zeile in f: 
+        if ":" in zeile: 
+            key, d[key] = (s.strip() for s in zeile.split(r':')) 
+        elif "key" in locals(): 
+            d[key] += "\n%s" % zeile.strip() 
+    f.close()
+    return d
 
 if __name__ == '__main__':
+    regSplit = re.compile(r'\t|\n')
+    regSearch = re.compile(r'\A.*',re.I | re.M)
+    items = []
+    
+#    print leseDatei("../../SUSIP_test.txt")
     datei = open("../../SUSIP_test.txt", "r")
-    for zeile in datei:
-            print zeile
-            if raw_input("") == "q":
-                break
-# Und jetzt kommt der Spass mit der RegEx ;)            
+        
+#    for zeile in datei:
+#        items.append(re.split(regSplit,zeile))
+#    for item in items:
+#        print item
+    rawdata = datei.read()
     datei.close()
-    del datei, zeile
+
+    m = regSearch.search(rawdata)
+    print m.expand()
+    print 'Ende'
+#    del datei, zeile
 
 
 
