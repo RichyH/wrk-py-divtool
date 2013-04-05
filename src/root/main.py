@@ -3,7 +3,7 @@
 '''
 Created on 21.02.2013
 
-@author: Richy Hareter
+@author: Richy Hareter, Last Backup function and the mighty sed command by Zoltan Szöke
 '''
 import os
 import re
@@ -57,17 +57,15 @@ if __name__ == '__main__':
     try:
         output = subprocess.Popen("ls /var/opt/eri_sn/ -t1 |head -n1",stdout=subprocess.PIPE,shell=True).communicate()
         BackupDir =  '/var/opt/eri_sn/' + output[0][:len(output[0])-1] + '/'
-
         shutil.copyfile(BackupDir+'DED.D',WorkDir+'DED.D.bak')
         SusipCmdFile = open(WorkDir+'SUSIP.cmd','w')
         print >> SusipCmdFile, '#!/bin/bash/'
         SedCmd =  "sed -e '1,138d;s/[ \\t] //g;s/^[\"[]*/mdsh -c susip:dir=/;s/\".*/\\\\;/' " + WorkDir + "DED.D.bak >> " + WorkDir + "SUSIP.cmd"
         subprocess.call(SedCmd,shell=True)
-        subprocess.call("lsof | grep SUSIP.cmd",shell=True)
+#        subprocess.call("lsof | grep SUSIP.cmd",shell=True)
         os.remove(WorkDir + 'DED.D.bak')
         os.chmod(WorkDir + 'SUSIP.cmd',S_IRUSR|S_IWUSR|S_IXUSR|S_IRGRP|S_IXGRP|S_IROTH|S_IXOTH)
-    
-        subprocess.call(WorkDir + "SUSIP.cmd > " + WorkDir + "SUSIP.log",shell=True)
+            subprocess.call(WorkDir + "SUSIP.cmd > " + WorkDir + "SUSIP.log",shell=True)
     except: sys.exit("Fehler beim Erstellen von SUSIP.log!")
 #-------------------------------------------------------------------------------------------------------------------------------------
     SusipInputFile = open(WorkDir + 'SUSIP.log','r')
