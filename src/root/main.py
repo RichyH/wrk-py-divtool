@@ -43,7 +43,6 @@ if __name__ == '__main__':
     regSearchV5Ics =    re.compile(r'(^DIRECTORY NUMBER):.([0-9]{1,10}).*\n^DIV STATE:.*(ICS),?.*\n^ADD INFO:.*ICS-CODE\s?=\s?(\d+)\s*([\w ]*)\s\(',re.I | re.M)
     regSearchV5Cmpl =   re.compile(r'(^DIRECTORY NUMBER):.([0-9]{1,10}).*\n(^DIV STATE):.([A-Z, ]{1,}).*\n(^ADD INFO):.([-=\w(,) ]*)',re.I | re.M)
 #-------------------------------------------------------------------------------------------------------------------------------------
-    items = []
     if len(sys.argv) == 3:
         try:
             WorkExtn = sys.argv[sys.argv.index('-wd')+1]
@@ -51,7 +50,6 @@ if __name__ == '__main__':
             sys.exit("Bitte den -wd Parameter angeben. Er soll die Nebenstelle, welche zum Umleiten verwendet wird, enthalten")
     else:
         sys.exit("Bitte den -wd Parameter angeben. Er soll die Nebenstelle, welche zum Umleiten verwendet wird, enthalten")
-
 #-------------------------------------------------------------------------------------------------------------------------------------
     WorkDir = os.getcwd() + '/'
     try:
@@ -68,6 +66,8 @@ if __name__ == '__main__':
             subprocess.call(WorkDir + "SUSIP.cmd > " + WorkDir + "SUSIP.log",shell=True)
     except: sys.exit("Fehler beim Erstellen von SUSIP.log!")
 #-------------------------------------------------------------------------------------------------------------------------------------
+    items = []
+
     SusipInputFile = open(WorkDir + 'SUSIP.log','r')
     rawdata = SusipInputFile.read()
     SusipInputFile.close()
